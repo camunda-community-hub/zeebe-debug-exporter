@@ -15,13 +15,14 @@
  */
 package io.zeebe.debug.exporter.server;
 
-import io.grpc.Status;
-import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
 import io.camunda.zeebe.protocol.record.Record;
 import io.camunda.zeebe.util.Either;
+import io.grpc.Status;
+import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
 import java.util.OptionalLong;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import org.apiguardian.api.API;
 
 /**
  * Record consumers receive a deserialized records and must return their greatest known acknowledged
@@ -40,6 +41,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  * <p>NOTE: when acknowledging with a given position, if a higher position was already recorded by
  * the Zeebe broker for that partition, the new position returned here will simply be ignored.
  */
+@API(status = API.Status.EXPERIMENTAL)
 @FunctionalInterface
 @ParametersAreNonnullByDefault
 public interface RecordConsumer {

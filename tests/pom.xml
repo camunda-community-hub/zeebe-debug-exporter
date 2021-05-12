@@ -31,6 +31,13 @@
       <scope>test</scope>
     </dependency>
 
+    <!-- enforce a dependency on the exporter to ensure it's packaged/installed first -->
+    <dependency>
+      <groupId>io.zeebe</groupId>
+      <artifactId>zeebe-debug-exporter</artifactId>
+      <scope>test</scope>
+    </dependency>
+
     <!-- primarily for golden file generation -->
     <dependency>
       <groupId>io.camunda</groupId>
@@ -152,6 +159,16 @@
               <followSymlinks>false</followSymlinks>
             </fileset>
           </filesets>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <configuration>
+          <ignoredUnusedDeclaredDependencies>
+            <unusedDeclaredDependency>io.zeebe:zeebe-debug-exporter</unusedDeclaredDependency>
+          </ignoredUnusedDeclaredDependencies>
         </configuration>
       </plugin>
     </plugins>

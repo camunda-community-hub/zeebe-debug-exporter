@@ -19,6 +19,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
+import io.camunda.zeebe.test.exporter.MockController;
 import io.grpc.ManagedChannel;
 import io.grpc.Server;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -27,7 +28,6 @@ import io.zeebe.debug.exporter.protocol.DebugExporter.Ack;
 import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
 import io.zeebe.debug.exporter.protocol.ExporterServiceGrpc;
 import io.zeebe.debug.exporter.protocol.ExporterServiceGrpc.ExporterServiceStub;
-import io.camunda.zeebe.test.exporter.MockController;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;

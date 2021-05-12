@@ -22,6 +22,11 @@
           <protoSourceRoot>${project.basedir}/src/main/resources</protoSourceRoot>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi</artifactId>
+      </plugin>
     </plugins>
   </build>
 

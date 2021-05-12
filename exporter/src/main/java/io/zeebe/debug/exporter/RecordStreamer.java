@@ -15,13 +15,13 @@
  */
 package io.zeebe.debug.exporter;
 
+import io.camunda.zeebe.exporter.api.context.Controller;
 import io.grpc.Status.Code;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.zeebe.debug.exporter.protocol.DebugExporter.Ack;
 import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
 import io.zeebe.debug.exporter.protocol.ExporterServiceGrpc.ExporterServiceStub;
-import io.camunda.zeebe.exporter.api.context.Controller;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import javax.annotation.ParametersAreNonnullByDefault;

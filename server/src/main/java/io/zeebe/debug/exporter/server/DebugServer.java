@@ -44,30 +44,27 @@ import java.util.concurrent.ThreadPoolExecutor.DiscardPolicy;
 import java.util.concurrent.TimeUnit;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * Default implementation of the debug server. See {@link DebugServerConfig} for configuration
  * options.
- *
- * <p>NOTE: the class is extensible by design.
- *
- * <p>TODO: fix issue where a client sends records #1, #2. On #1 we have an error, but #2 is already
- * in-flight - if we acknowledge #2, we will not get #1 again. Make sure to detect gaps, i.e. keep
- * track of the expected position per partition and reject records which are out of order.
  */
+@API(status = Status.EXPERIMENTAL)
 @ParametersAreNonnullByDefault
-public class DebugServer implements AutoCloseable {
-  protected final DebugServerConfig config;
+public final class DebugServer implements AutoCloseable {
+  private final DebugServerConfig config;
 
-  protected EventLoopGroup bossLoopGroup;
-  protected EventLoopGroup workerLoopGroup;
-  protected ExecutorService executor;
-  protected Server server;
-  protected Logger logger;
+  private EventLoopGroup bossLoopGroup;
+  private EventLoopGroup workerLoopGroup;
+  private ExecutorService executor;
+  private Server server;
+  private Logger logger;
 
-  protected volatile boolean started;
+  private volatile boolean started;
 
   @SuppressWarnings("unused")
   public DebugServer() {
@@ -114,9 +111,12 @@ public class DebugServer implements AutoCloseable {
 
     server.start();
     started = true;
-    logger.info(
-        "[SERVER] Started debug server listening on {}",
-        SocketAddressUtil.toString(getBindAddress()));
+
+    if (logger.isInfoEnabled()) {
+      logger.info(
+          "[SERVER] Started debug server listening on {}",
+          SocketAddressUtil.toString(getBindAddress()));
+    }
   }
 
   /**
@@ -139,9 +139,11 @@ public class DebugServer implements AutoCloseable {
     }
 
     if (started) {
-      logger.info(
-          "[SERVER] Shutting down debug server listening on {}",
-          SocketAddressUtil.toString(getBindAddress()));
+      if (logger.isInfoEnabled()) {
+        logger.info(
+            "[SERVER] Shutting down debug server listening on {}",
+            SocketAddressUtil.toString(getBindAddress()));
+      }
 
       server.shutdownNow();
       server.awaitTermination(30, TimeUnit.SECONDS);
@@ -157,19 +159,19 @@ public class DebugServer implements AutoCloseable {
 
   @Nonnull
   @SuppressWarnings("java:S1452")
-  protected ServerBuilder<?> buildServer(final ThreadFactory threadFactory) {
+  private ServerBuilder<?> buildServer(final ThreadFactory threadFactory) {
     return config.getTransport() == Transport.IPC
         ? buildInProcessServer()
         : buildNettyServer(threadFactory);
   }
 
   @Nonnull
-  protected InProcessServerBuilder buildInProcessServer() {
+  private InProcessServerBuilder buildInProcessServer() {
     return InProcessServerBuilder.forName(config.getTarget());
   }
 
   @Nonnull
-  protected NettyServerBuilder buildNettyServer(final ThreadFactory threadFactory) {
+  private NettyServerBuilder buildNettyServer(final ThreadFactory threadFactory) {
     final NettyServerBuilder builder = NettyServerBuilder.forAddress(config.getAddress());
 
     switch (config.getTransport()) {

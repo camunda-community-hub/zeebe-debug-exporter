@@ -15,19 +15,20 @@
  */
 package io.zeebe.debug.exporter.agent;
 
+import io.camunda.zeebe.protocol.record.Record;
+import io.camunda.zeebe.util.Either;
 import io.grpc.Status;
 import io.zeebe.debug.exporter.common.Transport;
 import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
 import io.zeebe.debug.exporter.server.DebugServer;
 import io.zeebe.debug.exporter.server.DebugServerConfig;
 import io.zeebe.debug.exporter.server.RecordConsumer;
-import io.camunda.zeebe.protocol.record.Record;
-import io.camunda.zeebe.util.Either;
 import java.util.OptionalLong;
 import java.util.concurrent.Callable;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 import org.agrona.concurrent.ShutdownSignalBarrier;
+import org.apiguardian.api.API;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
@@ -40,6 +41,7 @@ import picocli.CommandLine.Option;
     mixinStandardHelpOptions = true,
     version = "agent 0.26.1",
     description = "Standalone Zeebe Debug Exporter Server agent")
+@API(status = API.Status.EXPERIMENTAL)
 @ParametersAreNonnullByDefault
 public final class Agent implements Callable<Integer>, RecordConsumer {
   private final Logger logger;

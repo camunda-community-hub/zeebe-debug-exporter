@@ -17,6 +17,8 @@ package io.zeebe.debug.exporter.server;
 
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.databind.util.ByteBufferBackedInputStream;
+import io.camunda.zeebe.protocol.record.Record;
+import io.camunda.zeebe.util.Either;
 import io.grpc.Status;
 import io.grpc.Status.Code;
 import io.grpc.StatusException;
@@ -24,8 +26,6 @@ import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import io.zeebe.debug.exporter.protocol.DebugExporter.Ack;
 import io.zeebe.debug.exporter.protocol.DebugExporter.ExportedRecord;
-import io.camunda.zeebe.protocol.record.Record;
-import io.camunda.zeebe.util.Either;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Objects;

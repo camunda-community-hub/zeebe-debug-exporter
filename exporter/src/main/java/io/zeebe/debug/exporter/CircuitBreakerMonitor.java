@@ -15,10 +15,10 @@
  */
 package io.zeebe.debug.exporter;
 
+import io.camunda.zeebe.util.Either;
 import io.grpc.ConnectivityState;
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
-import io.camunda.zeebe.util.Either;
 import java.time.Duration;
 import java.util.EnumSet;
 import java.util.Objects;

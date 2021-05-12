@@ -17,12 +17,12 @@ package io.zeebe.debug.exporter.tests;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.netty.util.NetUtil;
 import io.camunda.zeebe.client.ZeebeClient;
 import io.camunda.zeebe.protocol.record.Record;
 import io.camunda.zeebe.protocol.record.RecordValue;
 import io.camunda.zeebe.test.EmbeddedBrokerRule;
 import io.camunda.zeebe.test.util.record.RecordingExporter;
+import io.netty.util.NetUtil;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.AfterEach;

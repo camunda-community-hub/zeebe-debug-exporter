@@ -26,11 +26,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
 import org.slf4j.Logger;
 
-/** Configuration for a {@link DebugServer}. Intended to be extended, as the server is. */
+/** Configuration for a {@link DebugServer}. */
+@API(status = Status.EXPERIMENTAL)
 @ParametersAreNonnullByDefault
-public class DebugServerConfig {
+public final class DebugServerConfig {
   private String target = "localhost:0";
   private Transport transport = Transport.INET;
   private RecordConsumer recordConsumer = new RecordCollector(new CopyOnWriteArraySet<>());

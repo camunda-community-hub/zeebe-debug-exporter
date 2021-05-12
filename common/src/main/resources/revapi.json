@@ -12,5 +12,18 @@
         "java.class.nonPublicPartOfAPI"
       ]
     }
+  },
+  {
+    "extension": "revapi.filter",
+    "configuration": {
+      "elements": {
+        "exclude": [
+          {
+            "matcher": "java",
+            "match": "@org.apiguardian.api.API(status != org.apiguardian.api.API.Status.STABLE) ^*;"
+          }
+        ]
+      }
+    }
   }
 ]

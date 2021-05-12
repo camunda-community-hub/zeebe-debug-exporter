@@ -82,8 +82,8 @@ public final class ZeebeDebugExporterConfig {
   }
 
   /**
-   * If true, when the remote server is unavailable, records will be skipped. See {@link CircuitBreakerMonitor}
-   * for more info about what unavailability means and how it's detected.
+   * If true, when the remote server is unavailable, records will be skipped. See {@link
+   * CircuitBreakerMonitor} for more info about what unavailability means and how it's detected.
    *
    * @return true if records can be skipped, false otherwise
    */
@@ -152,8 +152,8 @@ public final class ZeebeDebugExporterConfig {
    * Defaults to 3.
    *
    * <p>NOTE: not all failures will be considered - client side failures will be ignored, for
-   * example. Only non transient failures from the server are considered. See {@link CircuitBreakerMonitor} for
-   * more.
+   * example. Only non transient failures from the server are considered. See {@link
+   * CircuitBreakerMonitor} for more.
    *
    * @see CircuitBreakerMonitor
    * @return the number of consecutive failures required to mark the server as unavailable

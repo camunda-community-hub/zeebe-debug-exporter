@@ -15,14 +15,15 @@
  */
 package io.zeebe.debug.exporter.server;
 
-import io.grpc.Status;
 import io.camunda.zeebe.protocol.record.Record;
 import io.camunda.zeebe.util.Either;
+import io.grpc.Status;
 import java.util.Collection;
 import java.util.Objects;
 import java.util.OptionalLong;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import org.apiguardian.api.API;
 
 /**
  * Default implementation of {@link RecordConsumer}. It will add all records to the given
@@ -30,6 +31,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  *
  * <p>NOTE: the class is meant to be extensible by design.
  */
+@API(status = API.Status.EXPERIMENTAL)
 @ParametersAreNonnullByDefault
 public class RecordCollector implements RecordConsumer {
   protected final Collection<Record<?>> collection;

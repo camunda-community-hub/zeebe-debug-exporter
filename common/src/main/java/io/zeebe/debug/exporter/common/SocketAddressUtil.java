@@ -24,7 +24,10 @@ import java.net.URI;
 import java.util.Objects;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
 
+@API(status = Status.EXPERIMENTAL)
 @ParametersAreNonnullByDefault
 public final class SocketAddressUtil {
   private SocketAddressUtil() {}

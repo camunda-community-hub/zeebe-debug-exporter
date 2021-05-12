@@ -20,6 +20,11 @@
       <artifactId>javax.annotation-api</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.apiguardian</groupId>
+      <artifactId>apiguardian-api</artifactId>
+    </dependency>
+
     <!-- gRPC utilities -->
     <dependency>
       <artifactId>grpc-core</artifactId>
@@ -37,4 +42,13 @@
       <artifactId>netty-transport-native-unix-common</artifactId>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 </project>

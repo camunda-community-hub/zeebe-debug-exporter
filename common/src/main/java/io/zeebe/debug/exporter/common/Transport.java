@@ -18,7 +18,10 @@ package io.zeebe.debug.exporter.common;
 import java.util.Arrays;
 import java.util.Objects;
 import javax.annotation.Nonnull;
+import org.apiguardian.api.API;
+import org.apiguardian.api.API.Status;
 
+@API(status = Status.EXPERIMENTAL)
 public enum Transport {
   INET,
   UNIX,
