@@ -1,0 +1,85 @@
+{
+  "definitions": [
+    {
+      "protopath": "exporter.proto",
+      "def": {
+        "messages": [
+          {
+            "name": "ExportedRecord",
+            "fields": [
+              {
+                "id": 1,
+                "name": "partitionId",
+                "type": "uint32"
+              },
+              {
+                "id": 2,
+                "name": "position",
+                "type": "uint64"
+              },
+              {
+                "id": 3,
+                "name": "data",
+                "type": "bytes"
+              }
+            ]
+          },
+          {
+            "name": "Ack",
+            "fields": [
+              {
+                "id": 1,
+                "name": "partitionId",
+                "type": "uint32"
+              },
+              {
+                "id": 2,
+                "name": "position",
+                "type": "uint64"
+              }
+            ]
+          }
+        ],
+        "services": [
+          {
+            "name": "ExporterService",
+            "rpcs": [
+              {
+                "name": "Export",
+                "in_type": "ExportedRecord",
+                "out_type": "Ack",
+                "in_streamed": true,
+                "out_streamed": true
+              }
+            ]
+          }
+        ],
+        "package": {
+          "name": "debug_exporter_protocol"
+        },
+        "options": [
+          {
+            "name": "java_multiple_files",
+            "value": "false"
+          },
+          {
+            "name": "java_package",
+            "value": "io.zeebe.debug.exporter.protocol"
+          },
+          {
+            "name": "java_outer_classname",
+            "value": "DebugExporter"
+          },
+          {
+            "name": "go_package",
+            "value": "pb"
+          },
+          {
+            "name": "optimize_for",
+            "value": "SPEED"
+          }
+        ]
+      }
+    }
+  ]
+}

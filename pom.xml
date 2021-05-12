@@ -78,6 +78,7 @@
     <plugin.version.license>3.0</plugin.version.license>
     <plugin.version.owasp>6.1.6</plugin.version.owasp>
     <plugin.version.protobuf>0.6.1</plugin.version.protobuf>
+    <plugin.version.proto-compat>1.0.6</plugin.version.proto-compat>
     <plugin.version.revapi>0.14.2</plugin.version.revapi>
     <plugin.version.sonar>3.7.0.1746</plugin.version.sonar>
     <plugin.version.shade>3.2.4</plugin.version.shade>
@@ -591,7 +592,6 @@
                 <rules>
                   <dependencyConvergence />
                   <banDuplicatePomDependencyVersions />
-                  <reactorModuleConvergence />
                 </rules>
                 <skip>${skip.check}</skip>
               </configuration>
@@ -627,11 +627,6 @@
               <artifactId>revapi-java</artifactId>
               <version>${version.revapi}</version>
             </dependency>
-            <dependency>
-              <groupId>io.zeebe</groupId>
-              <artifactId>zeebe-debug-exporter-common</artifactId>
-              <version>${project.version}</version>
-            </dependency>
           </dependencies>
           <executions>
             <execution>
@@ -645,9 +640,10 @@
           <configuration>
             <checkDependencies>true</checkDependencies>
             <expandProperties>true</expandProperties>
+            <failOnMissingConfigurationFiles>true</failOnMissingConfigurationFiles>
             <analysisConfigurationFiles combine.children="append">
               <configurationFile>
-                <resource>revapi.json</resource>
+                <path>${maven.multiModuleProjectDirectory}/revapi.json</path>
               </configurationFile>
             </analysisConfigurationFiles>
             <skip>${skip.check}</skip>
@@ -673,6 +669,25 @@
               <phase>verify</phase>
               <goals>
                 <goal>check</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- protobuf tool to enforce backwards compatibility of protocol -->
+        <plugin>
+          <groupId>com.salesforce.servicelibs</groupId>
+          <artifactId>proto-backwards-compatibility</artifactId>
+          <version>${plugin.version.proto-compat}</version>
+          <configuration>
+            <protoSourceRoot>${project.basedir}/src/main/resources</protoSourceRoot>
+            <lockDir>${project.basedir}</lockDir>
+            <allowBreakingChanges>true</allowBreakingChanges>
+          </configuration>
+          <executions>
+            <execution>
+              <goals>
+                <goal>backwards-compatibility-check</goal>
               </goals>
             </execution>
           </executions>

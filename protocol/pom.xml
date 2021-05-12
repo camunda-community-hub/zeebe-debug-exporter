@@ -24,8 +24,8 @@
       </plugin>
 
       <plugin>
-        <groupId>org.revapi</groupId>
-        <artifactId>revapi</artifactId>
+        <groupId>com.salesforce.servicelibs</groupId>
+        <artifactId>proto-backwards-compatibility</artifactId>
       </plugin>
     </plugins>
   </build>
