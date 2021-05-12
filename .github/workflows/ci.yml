@@ -2,13 +2,13 @@ name: Java CI
 on:
   pull_request:
     paths:
-      - '**/*.java'
+      - '**/src/**/*'
       - '**/*.xml'
       - '**/revapi.json'
   push:
     branches: [ master ]
     paths:
-      - '**/*.java'
+      - '**/src/**/*'
       - '**/*.xml'
       - '**/revapi.json'
   workflow_dispatch: { }
@@ -90,7 +90,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
       - name: Verify
         id: verify
-        run: mvn -B -DskipTests package revapi:check
+        run: mvn -B -DskipTests verify
 
   vulnerability:
     name: Dependency Vulnerability Scan

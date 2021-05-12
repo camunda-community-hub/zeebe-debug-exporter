@@ -9,7 +9,7 @@ on:
   push:
     branches: [ master ]
     paths:
-      - '**/*.java'
+      - '**/src/**/*'
       - '**/*.xml'
       - '**/revapi.json'
   release:
