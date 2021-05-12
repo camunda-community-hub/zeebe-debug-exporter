@@ -9,12 +9,12 @@ on:
   push:
     branches: [ master ]
     paths:
-      - '*.java'
-      - '*.proto'
-      - '*.xml'
-      - '*.json'
-      - '*.properties'
-      - '*.yml'
+      - '**/*.java'
+      - '**/*.proto'
+      - '**/*.xml'
+      - '**/*.json'
+      - '**/*.properties'
+      - '**/*.yml'
   release:
     types: [ published ]
   workflow_dispatch: { }
