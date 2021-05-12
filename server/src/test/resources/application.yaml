@@ -1,0 +1,2 @@
+zeebe.debug.server:
+  port: 9090

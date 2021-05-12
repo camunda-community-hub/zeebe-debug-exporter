@@ -1,0 +1,68 @@
+[
+  {
+    "partitionId": 1,
+    "value": {
+      "name": "message",
+      "timeToLive": 0,
+      "variables": {
+        "foo": "bar"
+      },
+      "correlationKey": "key",
+      "messageId": "id"
+    },
+    "key": -1,
+    "sourceRecordPosition": -1,
+    "position": 1,
+    "valueType": "MESSAGE",
+    "timestamp": 1617648695540,
+    "recordType": "COMMAND",
+    "intent": "PUBLISH",
+    "rejectionType": "NULL_VAL",
+    "rejectionReason": "",
+    "brokerVersion": "1.0.0"
+  },
+  {
+    "partitionId": 1,
+    "value": {
+      "name": "message",
+      "timeToLive": 0,
+      "variables": {
+        "foo": "bar"
+      },
+      "correlationKey": "key",
+      "messageId": "id"
+    },
+    "key": 2251799813685249,
+    "sourceRecordPosition": 1,
+    "position": 2,
+    "valueType": "MESSAGE",
+    "timestamp": 1617648695574,
+    "recordType": "EVENT",
+    "intent": "PUBLISHED",
+    "rejectionType": "NULL_VAL",
+    "rejectionReason": "",
+    "brokerVersion": "1.0.0"
+  },
+  {
+    "partitionId": 1,
+    "value": {
+      "name": "message",
+      "timeToLive": 0,
+      "variables": {
+        "foo": "bar"
+      },
+      "correlationKey": "key",
+      "messageId": "id"
+    },
+    "key": 2251799813685249,
+    "sourceRecordPosition": 1,
+    "position": 3,
+    "valueType": "MESSAGE",
+    "timestamp": 1617648695574,
+    "recordType": "EVENT",
+    "intent": "DELETED",
+    "rejectionType": "NULL_VAL",
+    "rejectionReason": "",
+    "brokerVersion": "1.0.0"
+  }
+]

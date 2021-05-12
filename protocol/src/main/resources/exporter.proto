@@ -1,0 +1,42 @@
+syntax = 'proto3';
+package debug_exporter_protocol;
+
+option java_multiple_files = false;
+option java_package = "io.zeebe.debug.exporter.protocol";
+option java_outer_classname = "DebugExporter";
+option go_package = "pb";
+option optimize_for = SPEED;
+
+/**
+ * An ExportedRecord represents a serialized Zeebe application record with the
+ * minimum amount of metadata to uniquely identify it: the partition ID and the
+ * position. It's used by the client to push records out to the server.
+ */
+message ExportedRecord {
+  uint32 partitionId = 1;
+  uint64 position = 2;
+  bytes data = 3;
+}
+
+/**
+ * An Ack represents a notification from the server acknowledging that all
+ * records for the given partition with a position less than or equal to the
+ * given position have been successfully exported, and can now be deleted.
+ */
+message Ack {
+  uint32 partitionId = 1;
+  uint64 position = 2;
+}
+
+service ExporterService {
+  /**
+   * An RPC to ingest records, and optionally acknowledge them asynchronously.
+   * It's up to the client to prevent split brain for a given partition - it's
+   * completely fine for a server to assume that there is only one live client
+   * per partition at a given time.
+   *
+   * Refer to the implementation itself for a list of possible errors that can
+   * be returned.
+   */
+  rpc Export (stream ExportedRecord) returns (stream Ack);
+}

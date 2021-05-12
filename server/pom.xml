@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <name>Zeebe Debug Exporter Server</name>
+  <artifactId>zeebe-debug-exporter-server</artifactId>
+  <packaging>jar</packaging>
+
+  <parent>
+    <artifactId>zeebe-debug-exporter-root</artifactId>
+    <groupId>io.zeebe</groupId>
+    <relativePath>../pom.xml</relativePath>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <server.finalName>${project.artifactId}-${project.version}</server.finalName>
+  </properties>
+
+  <dependencies>
+    <!-- runtime dependencies -->
+    <dependency>
+      <artifactId>zeebe-debug-exporter-protocol</artifactId>
+      <groupId>io.zeebe</groupId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.zeebe</groupId>
+      <artifactId>zeebe-debug-exporter-common</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.camunda</groupId>
+      <artifactId>zeebe-util</artifactId>
+    </dependency>
+
+    <!-- serialization -->
+    <dependency>
+      <groupId>io.zeebe</groupId>
+      <artifactId>zeebe-protocol-immutables</artifactId>
+    </dependency>
+
+    <dependency>
+      <artifactId>jackson-core</artifactId>
+      <groupId>com.fasterxml.jackson.core</groupId>
+    </dependency>
+
+    <!-- gRPC -->
+    <dependency>
+      <artifactId>grpc-netty</artifactId>
+      <groupId>io.grpc</groupId>
+    </dependency>
+
+    <dependency>
+      <artifactId>grpc-api</artifactId>
+      <groupId>io.grpc</groupId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-transport-native-epoll</artifactId>
+      <classifier>linux-x86_64</classifier>
+    </dependency>
+
+    <!-- compile time annotations -->
+    <dependency>
+      <groupId>javax.annotation</groupId>
+      <artifactId>javax.annotation-api</artifactId>
+    </dependency>
+
+    <!-- logging -->
+    <dependency>
+      <artifactId>slf4j-api</artifactId>
+      <groupId>org.slf4j</groupId>
+    </dependency>
+
+    <!-- test dependencies -->
+    <dependency>
+      <artifactId>slf4j-simple</artifactId>
+      <groupId>org.slf4j</groupId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <finalName>${server.finalName}</finalName>
+    <plugins>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.revapi</groupId>
+        <artifactId>revapi-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+</project>

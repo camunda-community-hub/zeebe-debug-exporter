@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter>
+  <!-- Anything in the build directory ought to be ignored, because it includes generated files we don't have control over -->
+  <Match>
+    <Source name="~.*generated-sources/.*\.java"/>
+  </Match>
+</FindBugsFilter>
