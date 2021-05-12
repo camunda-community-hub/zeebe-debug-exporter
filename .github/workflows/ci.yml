@@ -2,15 +2,19 @@ name: Java CI
 on:
   pull_request:
     paths:
-      - '**/src/**/*'
-      - '**/*.xml'
-      - '**/revapi.json'
+      - '*.java'
+      - '*.proto'
+      - '*.xml'
+      - '*.json'
+      - '*.properties'
   push:
     branches: [ master ]
     paths:
-      - '**/src/**/*'
-      - '**/*.xml'
-      - '**/revapi.json'
+      - '*.java'
+      - '*.proto'
+      - '*.xml'
+      - '*.json'
+      - '*.properties'
   workflow_dispatch: { }
 env:
   SONARCLOUD_TOKEN: ${{ secrets.SONAR_TOKEN }}

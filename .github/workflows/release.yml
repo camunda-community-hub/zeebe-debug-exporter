@@ -9,9 +9,11 @@ on:
   push:
     branches: [ master ]
     paths:
-      - '**/src/**/*'
-      - '**/*.xml'
-      - '**/revapi.json'
+      - '*.java'
+      - '*.proto'
+      - '*.xml'
+      - '*.json'
+      - '*.properties'
   release:
     types: [ published ]
   workflow_dispatch: { }
