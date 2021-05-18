@@ -54,7 +54,7 @@
     <version.logback>1.2.3</version.logback>
     <version.mockito>3.9.0</version.mockito>
     <version.mockito-jupiter>3.9.0</version.mockito-jupiter>
-    <version.netty>4.1.63.Final</version.netty>
+    <version.netty>4.1.64.Final</version.netty>
     <version.picocli>4.6.1</version.picocli>
     <version.protobuf>3.16.0</version.protobuf>
     <version.revapi>0.24.1</version.revapi>
