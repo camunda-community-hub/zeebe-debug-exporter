@@ -57,7 +57,7 @@
     <version.netty>4.1.65.Final</version.netty>
     <version.picocli>4.6.1</version.picocli>
     <version.protobuf>3.17.1</version.protobuf>
-    <version.revapi>0.24.1</version.revapi>
+    <version.revapi>0.24.2</version.revapi>
     <version.slf4j>1.7.30</version.slf4j>
     <version.snakeyaml>1.28</version.snakeyaml>
     <version.spotbugs>4.2.0</version.spotbugs>
