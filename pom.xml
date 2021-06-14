@@ -59,7 +59,7 @@
     <version.protobuf>3.17.3</version.protobuf>
     <version.revapi>0.24.2</version.revapi>
     <version.slf4j>1.7.30</version.slf4j>
-    <version.snakeyaml>1.28</version.snakeyaml>
+    <version.snakeyaml>1.29</version.snakeyaml>
     <version.spotbugs>4.2.0</version.spotbugs>
     <version.testcontainers>1.15.3</version.testcontainers>
     <version.zeebe>1.0.1</version.zeebe>
