@@ -44,7 +44,7 @@
     <version.assertj>3.20.2</version.assertj>
     <version.awaitility>4.1.0</version.awaitility>
     <version.errorprone>2.8.1</version.errorprone>
-    <version.failsafe>2.4.2</version.failsafe>
+    <version.failsafe>2.4.3</version.failsafe>
     <version.google-protos>2.3.2</version.google-protos>
     <version.graalvm>21.2.0</version.graalvm>
     <version.grpc>1.39.0</version.grpc>
