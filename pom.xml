@@ -52,7 +52,7 @@
     <version.javax>1.3.2</version.javax>
     <version.junit-jupiter>5.7.2</version.junit-jupiter>
     <version.logback>1.2.5</version.logback>
-    <version.mockito>3.11.2</version.mockito>
+    <version.mockito>3.12.4</version.mockito>
     <version.mockito-jupiter>3.9.0</version.mockito-jupiter>
     <version.netty>4.1.66.Final</version.netty>
     <version.picocli>4.6.1</version.picocli>
