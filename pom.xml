@@ -42,7 +42,7 @@
     <!-- project dependencies -->
     <version.apiguardian>1.1.2</version.apiguardian>
     <version.assertj>3.21.0</version.assertj>
-    <version.awaitility>4.1.0</version.awaitility>
+    <version.awaitility>4.1.1</version.awaitility>
     <version.errorprone>2.9.0</version.errorprone>
     <version.failsafe>2.4.4</version.failsafe>
     <version.google-protos>2.5.1</version.google-protos>
