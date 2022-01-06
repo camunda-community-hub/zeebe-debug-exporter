@@ -56,7 +56,7 @@
     <version.mockito-jupiter>3.9.0</version.mockito-jupiter>
     <version.netty>4.1.68.Final</version.netty>
     <version.picocli>4.6.1</version.picocli>
-    <version.protobuf>3.18.1</version.protobuf>
+    <version.protobuf>3.19.2</version.protobuf>
     <version.revapi>0.25.0</version.revapi>
     <version.slf4j>1.7.32</version.slf4j>
     <version.snakeyaml>1.29</version.snakeyaml>
