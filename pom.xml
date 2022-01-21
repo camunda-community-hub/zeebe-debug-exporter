@@ -64,7 +64,7 @@
     <version.testcontainers>1.16.0</version.testcontainers>
     <version.zeebe>1.2.0</version.zeebe>
     <version.zeebe-protocol-immutables>2.0.0</version.zeebe-protocol-immutables>
-    <version.zeebe-test-container>3.0.0</version.zeebe-test-container>
+    <version.zeebe-test-container>3.2.0</version.zeebe-test-container>
 
     <!-- plugin version -->
     <plugin.version.compiler>3.8.1</plugin.version.compiler>
