@@ -1,7 +1,7 @@
 # Zeebe Debug Exporter
 
 [![](https://img.shields.io/badge/Community%20Extension-An%20open%20source%20community%20maintained%20project-FF4700)](https://github.com/camunda-community-hub/community)
-[![](https://img.shields.io/badge/Lifecycle-Incubating-blue)](https://github.com/Camunda-Community-Hub/community/blob/main/extension-lifecycle.md#incubating-)
+[![](https://img.shields.io/badge/Lifecycle-Proof%20of%20Concept-blueviolet)](https://github.com/Camunda-Community-Hub/community/blob/main/extension-lifecycle.md#proof-of-concept-)
 [![](https://img.shields.io/github/v/release/zeebe-io/zeebe-debug-exporter?sort=semver)](https://github.com/zeebe-io/zeebe-protocol-immutables/releases/latest)
 [![Java CI](https://github.com/camunda-community-hub/zeebe-debug-exporter/actions/workflows/ci.yml/badge.svg)](https://github.com/camunda-community-hub/zeebe-debug-exporter/actions/workflows/ci.yml)
 
