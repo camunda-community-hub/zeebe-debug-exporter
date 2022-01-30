@@ -58,7 +58,7 @@
     <version.picocli>4.6.1</version.picocli>
     <version.protobuf>3.19.4</version.protobuf>
     <version.revapi>0.25.0</version.revapi>
-    <version.slf4j>1.7.32</version.slf4j>
+    <version.slf4j>1.7.33</version.slf4j>
     <version.snakeyaml>1.29</version.snakeyaml>
     <version.spotbugs>4.2.0</version.spotbugs>
     <version.testcontainers>1.16.0</version.testcontainers>
