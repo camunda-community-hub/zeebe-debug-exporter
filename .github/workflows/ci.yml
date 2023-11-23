@@ -30,7 +30,7 @@ jobs:
         with:
           java-version: 11
       - name: Cache dependencies
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v2.1.8
         continue-on-error: true
         with:
           path: ~/.m2
@@ -67,7 +67,7 @@ jobs:
           java-version: 11
       - name: Cache dependencies
         if: ${{ env.SONARCLOUD_TOKEN != null }}
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v2.1.8
         continue-on-error: true
         with:
           path: ~/.m2
@@ -88,7 +88,7 @@ jobs:
         with:
           java-version: 11
       - name: Cache dependencies
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v2.1.8
         continue-on-error: true
         with:
           path: ~/.m2
@@ -107,7 +107,7 @@ jobs:
         with:
           java-version: 11
       - name: Cache dependencies
-        uses: actions/cache@v2.1.3
+        uses: actions/cache@v2.1.8
         continue-on-error: true
         with:
           path: ~/.m2
